@@ -69,10 +69,6 @@
   overflow: hidden;
 }
 
-.inspector-main .interaction-tab-container :global(.ant-tabs-tabpane) {
-  height: 100%;
-}
-
 .inspector-main .interaction-tab-container {
   position: relative;
   flex-grow: 3;
@@ -81,7 +77,6 @@
   padding-left: 1em;
   display: flex;
   flex-flow: column;
-  height: 100%;
 }
 
 .inspector-main :global(.ant-card-head) {
@@ -97,33 +92,6 @@
   height: calc(100% - 48px);
   padding: 12px;
   scrollbar-width: none; /* -webkit-scrollbar for Firefox */
-}
-
-.inspector-main .interaction-tab-container :global(.ant-tabs) {
-  height: 100%;
-}
-
-.inspector-main .interaction-tab-container :global(.ant-tabs-content) {
-  height: 100%;
-}
-
-.inspector-main .interaction-tab-container :global(.action-row) {
-  display: flex;
-  height: 100%;
-}
-
-.inspector-main .interaction-tab-container :global(.action-col) {
-  min-width: 50%;
-  max-width: 50%;
-}
-
-.inspector-main .interaction-tab-container :global(.ant-card) {
-  height: 100%;
-}
-
-.inspector-main .tree-container {
-  height: 100%;
-  overflow: auto;
 }
 
 .session-info-table {
@@ -184,10 +152,6 @@
 .inspector-main :global(.ant-card-body::-webkit-scrollbar) {
   background: transparent;
   width: 14px;
-}
-
-.inspector-main .interaction-tab-container .interaction-tab-card {
-  height: 100%;
 }
 
 .highlighter-box {

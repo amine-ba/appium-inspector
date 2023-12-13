@@ -236,55 +236,8 @@ const SelectedElement = (props) => {
             />
           </Tooltip>
         </Button.Group>
-        <Button.Group>
-          <Tooltip title={t('Copy Attributes to Clipboard')}>
-            <Button
-              disabled={isDisabled}
-              id="btnCopyAttributes"
-              icon={<CopyOutlined />}
-              onClick={() => clipboard.writeText(JSON.stringify(dataSource))}
-            />
-          </Tooltip>
-          <Tooltip title={t('Get Timing')}>
-            <Button
-              disabled={isDisabled}
-              id="btnGetTiming"
-              icon={<HourglassOutlined />}
-              onClick={() => getFindElementsTimes(findDataSource)}
-            />
-          </Tooltip>
-        </Button.Group>
       </Row>
-      {findDataSource.length > 0 && (
-        <Row>
-          <Spin spinning={isFindingElementsTimes}>
-            <Table
-              columns={findColumns}
-              dataSource={findDataSource}
-              size="small"
-              tableLayout="fixed"
-              pagination={false}
-            />
-          </Spin>
-        </Row>
-      )}
       <br />
-      {currentContext === NATIVE_APP && showXpathWarning && (
-        <div>
-          <Alert message={t('usingXPathNotRecommended')} type={ALERT.WARNING} showIcon />
-          <br />
-        </div>
-      )}
-      {dataSource.length > 0 && (
-        <Row>
-          <Table
-            columns={attributeColumns}
-            dataSource={dataSource}
-            size="small"
-            pagination={false}
-          />
-        </Row>
-      )}
     </div>
   );
 };
