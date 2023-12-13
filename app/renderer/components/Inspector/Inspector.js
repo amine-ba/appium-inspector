@@ -302,7 +302,7 @@ const Inspector = (props) => {
               key: INTERACTION_MODE.SOURCE,
               children: (
                 <div className="action-row">
-                  <div className="action-col">
+                  {/* <div className="action-col">
                     <Card
                       title={
                         <span>
@@ -340,7 +340,7 @@ const Inspector = (props) => {
                     >
                       <Source {...props} />
                     </Card>
-                  </div>
+                  </div> */}
                   <div
                     id="selectedElementContainer"
                     className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}
@@ -361,68 +361,9 @@ const Inspector = (props) => {
               ),
             },
             {
-              label: t('Commands'),
-              key: INTERACTION_MODE.COMMANDS,
-              children: (
-                <Card
-                  title={
-                    <span>
-                      <ThunderboltOutlined /> {t('Execute Commands')}
-                    </span>
-                  }
-                  className={InspectorStyles['interaction-tab-card']}
-                >
-                  <Commands {...props} />
-                </Card>
-              ),
-            },
-            {
-              label: t('Gestures'),
-              key: INTERACTION_MODE.GESTURES,
-              children: isGestureEditorVisible ? (
-                <Card
-                  title={
-                    <span>
-                      <HighlightOutlined /> {t('Gesture Builder')}
-                    </span>
-                  }
-                  className={InspectorStyles['interaction-tab-card']}
-                >
-                  <GestureEditor {...props} />
-                </Card>
-              ) : (
-                <Card
-                  title={
-                    <span>
-                      <HighlightOutlined /> {t('Saved Gestures')}
-                    </span>
-                  }
-                  className={InspectorStyles['interaction-tab-card']}
-                >
-                  <SavedGestures {...props} />
-                </Card>
-              ),
-            },
-            {
               label: t('Recorder'),
               key: INTERACTION_MODE.RECORDER,
               children: <Recorder {...props} />,
-            },
-            {
-              label: t('Session Information'),
-              key: INTERACTION_MODE.SESSION_INFO,
-              children: (
-                <Card
-                  title={
-                    <span>
-                      <InfoCircleOutlined /> {t('Session Information')}
-                    </span>
-                  }
-                  className={InspectorStyles['interaction-tab-card']}
-                >
-                  <SessionInfo {...props} />
-                </Card>
-              ),
             },
           ]}
         />
