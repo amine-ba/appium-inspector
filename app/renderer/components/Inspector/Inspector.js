@@ -302,45 +302,6 @@ const Inspector = (props) => {
               key: INTERACTION_MODE.SOURCE,
               children: (
                 <div className="action-row">
-                  {/* <div className="action-col">
-                    <Card
-                      title={
-                        <span>
-                          <FileTextOutlined /> {t('App Source')}{' '}
-                        </span>
-                      }
-                      extra={
-                        <span>
-                          <Tooltip title={t('Toggle Attributes')}>
-                            <Button
-                              type="text"
-                              id="btnToggleAttrs"
-                              icon={<CodeOutlined />}
-                              onClick={toggleShowAttributes}
-                            />
-                          </Tooltip>
-                          <Tooltip title={t('Copy XML Source to Clipboard')}>
-                            <Button
-                              type="text"
-                              id="btnSourceXML"
-                              icon={<CopyOutlined />}
-                              onClick={() => clipboard.writeText(sourceXML)}
-                            />
-                          </Tooltip>
-                          <Tooltip title={t('Download Source as .XML File')}>
-                            <Button
-                              type="text"
-                              id="btnDownloadSourceXML"
-                              icon={<DownloadOutlined />}
-                              onClick={() => downloadXML(sourceXML)}
-                            />
-                          </Tooltip>
-                        </span>
-                      }
-                    >
-                      <Source {...props} />
-                    </Card>
-                  </div> */}
                   <div
                     id="selectedElementContainer"
                     className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}
@@ -357,13 +318,9 @@ const Inspector = (props) => {
                       {!selectedElement.path && <i>{t('selectElementInSource')}</i>}
                     </Card>
                   </div>
+                  <Recorder {...props} />
                 </div>
               ),
-            },
-            {
-              label: t('Recorder'),
-              key: INTERACTION_MODE.RECORDER,
-              children: <Recorder {...props} />,
             },
           ]}
         />
