@@ -292,38 +292,13 @@ const Inspector = (props) => {
         )}
       </div>
       <div id="sourceTreeContainer" className={InspectorStyles['interaction-tab-container']}>
-        <Tabs
-          activeKey={selectedInteractionMode}
-          size="small"
-          onChange={(tab) => selectInteractionMode(tab)}
-          items={[
-            {
-              label: t('Source'),
-              key: INTERACTION_MODE.SOURCE,
-              children: (
-                <div className="action-row">
-                  <div
-                    id="selectedElementContainer"
-                    className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}
-                  >
-                    <Card
-                      title={
-                        <span>
-                          <TagOutlined /> {t('selectedElement')}
-                        </span>
-                      }
-                      className={InspectorStyles['selected-element-card']}
-                    >
-                      {selectedElement.path && <SelectedElement {...props} />}
-                      {!selectedElement.path && <i>{t('selectElementInSource')}</i>}
-                    </Card>
-                  </div>
-                  <Recorder {...props} />
-                </div>
-              ),
-            },
-          ]}
-        />
+        <div className="action-row">
+          <Card className={InspectorStyles['interaction-tab-card']}>
+            {selectedElement.path && <SelectedElement {...props} />}
+            {!selectedElement.path && <i>{t('selectElementInSource')}</i>}
+          </Card>
+          <Recorder {...props} />
+        </div>
       </div>
     </div>
   );

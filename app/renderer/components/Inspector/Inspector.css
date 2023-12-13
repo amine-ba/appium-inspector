@@ -143,9 +143,11 @@
 
 .inspector-main .interaction-tab-card :global(.ant-card-body) {
   overflow: scroll;
+  background-color: red;
 }
 
 .inspector-main .interaction-tab-card {
+  background-color: red;
   flex: 2;
 }
 
